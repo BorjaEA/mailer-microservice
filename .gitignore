@@ -1,5 +1,7 @@
+# .gitignore
 .env
 /bin
 /obj
 .vscode
-
+bin/
+obj/

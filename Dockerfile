@@ -4,10 +4,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-COPY *.csproj ./
+# Copy csproj and restore dependencies
+COPY src/MailerMicroservice/*.csproj ./ 
 RUN dotnet restore
 
-COPY . ./
+# Copy all source code and publish
+COPY src/MailerMicroservice/. ./
 RUN dotnet publish -c Release -o /app
 
 # -----------------
@@ -19,9 +21,12 @@ WORKDIR /app
 # Copy published files from build stage
 COPY --from=build /app ./
 
-# Expose ports here (metadata for Docker)
+# Expose HTTP and HTTPS ports
 EXPOSE 8080
 EXPOSE 8081
+
+# Set environment variable for container
+ENV DOTNET_RUNNING_IN_CONTAINER=true
 
 # Run the app
 ENTRYPOINT ["dotnet", "mailer-microservice.dll"]
