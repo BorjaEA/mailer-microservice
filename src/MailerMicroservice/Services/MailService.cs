@@ -25,7 +25,10 @@ namespace MailerMicroservice.Services
             using var client = new SmtpClient();
             await client.ConnectAsync(
                 _config["Smtp:Host"],
-                int.Parse(_config["Smtp:Port"]),
+                int.Parse(
+                    _config["Smtp:Port"]
+                        ?? throw new ArgumentNullException("Smtp:Port configuration is missing")
+                ),
                 MailKit.Security.SecureSocketOptions.StartTls
             );
             await client.AuthenticateAsync(_config["Smtp:User"], _config["Smtp:Password"]);

@@ -9,5 +9,6 @@
       ],
       "rollForward": false
     }
-  }
+  },
+  "editor.codeLens": true
 }
