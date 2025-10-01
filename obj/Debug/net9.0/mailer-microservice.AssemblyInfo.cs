@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mailer-microservice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26eeb9d268dd48078ec359b93c064a96c796cb9a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0c36e469618674b5d0d6aae3773bf78d4eba7a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("mailer-microservice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mailer-microservice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

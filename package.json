@@ -1,0 +1,21 @@
+{
+	"name": "mailer-microservice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"docker:prod": "docker rm -f mailermicroservice || true && docker build -t mailermicroservice . && docker run -d -p 8080:8080 -p 8081:8081 --name mailermicroservice mailermicroservice",
+		"docker:dev": "docker rm -f mailermicroservice || true && docker build -t mailermicroservice . && docker run -d -p 8080:8080 -p 8081:8081 -e ASPNETCORE_ENVIRONMENT=Development --name mailermicroservice mailermicroservice"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BorjaEA/mailer-microservice.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BorjaEA/mailer-microservice/issues"
+	},
+	"homepage": "https://github.com/BorjaEA/mailer-microservice#readme"
+}
